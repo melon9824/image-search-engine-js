@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    /* padding: 0.5rem 6%; */
+    background: linear-gradient(45deg, 
+                                #222 0%, 
+                                #6b0505ef -50%, 
+                                #2e2d2dde 45%), 
+                                url(img/bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+/*=== nav ===*/
+.nav {
+    height: 8vh;
+    padding: 0 6%;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(45deg, #ff00008e 50%, #22222249 50%);
+}
+
+/* logo */
+.logo {
+    justify-content: start;
+}
+
+.logo img {
+    width: 2rem;
+}
+
+.logo h2 {
+    color: #37D0EE;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: #ffa500;
+    font-weight: 400;
+}
+
+/* button */
+.btn {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(45deg, #ff00008e 0%, #22222249 50%);
+    transition: background 0.4s;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #22222249 0%, #ff00008e 100%);
+}
+
+
+/*=== hero ===*/
+.hero {
+    margin-top: 3rem;
+    padding: 0 6%;
+}
+
+.hero h1 {
+    color: #37D0EE;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: underline #ffa500;
+    text-underline-offset: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-form {
+    width: 90%;
+    max-width: 500px;
+    height: 3rem;
+    background: #111;
+    position: relative;
+    border-radius: .5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.search-form input {
+    flex: 1;
+    height: 100%;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: .5rem;
+    caret-color: #ffa500;
+}
+
+::placeholder {
+    font-size: 0.9rem;
+}
+
+.search-btn {
+    outline: none;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.search-result{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+}
+
+.search-result img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 5px;
+    
+}
+
+.show-more-btn {
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    display: none;
+}
+
+
+/* footer */
+footer {
+    height: 7vh;
+    padding: .5rem 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    place-content: center;
+    background: linear-gradient(45deg,#22222249 50%, #ff00008e 50%);
+}
+
+footer p {
+    padding: 0.1rem;
+    font-size: 0.75rem;
+    color: #f8f4f4d2;
+}
+
+footer p a {
+    color: #8fb0f3cb;
+    text-decoration: underline;
+    text-underline-offset: .2rem;
+    transition: all 0.4s;
+}
+
+footer p a:hover {
+    text-decoration: none;
+    color: #ffa500;
+}
+
+
+/* responsive design */
+@media screen and (max-width: 992px) {
+    .search-result{
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .search-result img {
+        height: 150px;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .container {
+        background-size: cover;
+    }
+
+    .nav {
+        padding: 0.5rem 3%;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    
+    .logo img {
+        width: 1.75rem;
+    }
+    
+    .logo h2 {
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 1.25rem;
+    }
+
+    .hero h1 {
+        font-size: 0.8rem;
+    }
+
+    .search-form {
+        height: 2rem;
+    }
+    
+    .search-form input {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+
+    ::placeholder {
+        font-size: 0.75rem;
+    }
+    
+    .search-btn {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .search-result{
+        grid-template-columns: 1fr;
+    }
+    
+    .search-result img {
+        width: 80%;
+        height: 180px;
+    }
+}
